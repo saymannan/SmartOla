@@ -1,8 +1,129 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.appathon.smartola.MainActivity"
-    tools:ignore="MergeRootFrame" />
+    android:animateLayoutChanges="true"
+    tools:context=".MapActivity" >
 
+    <fragment
+        xmlns:map="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/map"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        class="com.google.android.gms.maps.MapFragment"
+        android:scrollbars="vertical" />
+
+    <LinearLayout
+        android:id="@+id/layoutOptions"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="bottom"
+        android:orientation="horizontal"
+        android:padding="4dp" >
+
+        <Button
+            android:id="@+id/btnRide"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_horizontal|center_vertical"
+            android:text="@string/ride" />
+
+        <View
+            android:id="@+id/VerticalLine"
+            android:layout_width="1dip"
+            android:layout_height="match_parent"
+            android:background="#aaa" />
+
+        <Button
+            android:id="@+id/btnPlan"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_horizontal|center_vertical"
+            android:text="@string/plan" />
+
+        <View
+            android:id="@+id/VerticalLine"
+            android:layout_width="1dip"
+            android:layout_height="match_parent"
+            android:background="#aaa" />
+
+        <Button
+            android:id="@+id/btnExplore"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_horizontal|center_vertical"
+            android:text="@string/explore" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layoutCategories"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_above="@id/layoutOptions"
+        android:layout_gravity="bottom"
+        android:orientation="horizontal"
+        android:padding="4dp"
+        android:visibility="gone" >
+
+        <Button
+            android:id="@+id/btnSedan"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_horizontal|center_vertical"
+            android:text="@string/sedan" />
+
+        <View
+            android:id="@+id/VerticalLine"
+            android:layout_width="1dip"
+            android:layout_height="match_parent"
+            android:background="#aaa" />
+
+        <Button
+            android:id="@+id/btnMini"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_horizontal|center_vertical"
+            android:text="@string/mini" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layoutBooking"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_above="@id/layoutCategories"
+        android:layout_gravity="bottom"
+        android:orientation="horizontal"
+        android:padding="4dp"
+        android:visibility="gone" >
+
+        <Button
+            android:id="@+id/btnRideNow"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_horizontal|center_vertical"
+            android:text="@string/rideNow" />
+
+        <View
+            android:id="@+id/VerticalLine"
+            android:layout_width="1dip"
+            android:layout_height="match_parent"
+            android:background="#aaa" />
+
+        <Button
+            android:id="@+id/btnPool"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_horizontal|center_vertical"
+            android:text="@string/pool" />
+    </LinearLayout>
+
+</RelativeLayout>
